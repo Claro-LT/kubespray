@@ -92,8 +92,8 @@ data:
   #
   # For users upgrading from Cilium 1.2 or earlier, to minimize disruption
   # during the upgrade process, comment out these options.
-  bpf-ct-global-tcp-max: "524288"
-  bpf-ct-global-any-max: "262144"
+  bpf-ct-global-tcp-max: "4552960"
+  bpf-ct-global-any-max: "9105920"
 
   # Pre-allocation of map entries allows per-packet latency to be reduced, at
   # the expense of up-front memory allocation for the entries in the maps. The
