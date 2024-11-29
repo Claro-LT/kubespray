@@ -151,6 +151,9 @@ spec:
           mountPropagation: Bidirectional
         - name: cilium-run
           mountPath: /var/run/cilium
+        - name: cilium-netns
+          mountPath: /var/run/cilium/netns
+          mountPropagation: HostToContainer
 {% if cilium_version | regex_replace('v') is version('1.13.1', '<') %}
         - name: cni-path
           mountPath: /host/opt/cni/bin
@@ -350,6 +353,10 @@ spec:
       - name: cilium-run
         hostPath:
           path: /var/run/cilium
+          type: DirectoryOrCreate
+      - name: cilium-netns
+        hostPath:
+          path: /var/run/netns
           type: DirectoryOrCreate
         # To keep state between restarts / upgrades for bpf maps
       - name: bpf-maps
