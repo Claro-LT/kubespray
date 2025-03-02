@@ -122,9 +122,6 @@ spec:
               command:
               - /cni-uninstall.sh
         resources:
-          limits:
-            cpu: {{ cilium_cpu_limit }}
-            memory: {{ cilium_memory_limit }}
           requests:
             cpu: {{ cilium_cpu_requests }}
             memory: {{ cilium_memory_requests }}
