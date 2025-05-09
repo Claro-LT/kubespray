@@ -38,6 +38,14 @@ rules:
   - secrets
   verbs:
   - get
+- apiGroups:
+  - ""
+  resources:
+  - configmaps
+  verbs:
+  - get
+  - list
+  - watch
 {% if cilium_version | regex_replace('v') is version('1.12', '<') %}
 - apiGroups:
   - ""
